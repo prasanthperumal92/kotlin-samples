@@ -66,7 +66,7 @@ println(user.name)
  * can return any object
  * provides an it object which can be altered
  * provides null sfety
- * 
+ *
  * **/
 
 val let = user.let {
@@ -115,6 +115,7 @@ println(user.name)
 /**
  * ALSO
  * mainly used for chaining
+ * always return the same object
  * it provide it as an object
  * it is null safe
  * **/
@@ -124,5 +125,6 @@ var user3 = user
 val also = user3.also { it.name = "username3" }
 
 println(user3.name)
+
 
 
