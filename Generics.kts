@@ -36,7 +36,8 @@ callback2.success(Integer.valueOf(12))
  * Bivariant	If it accepts both supertypes and subtypes
  * Invariant	 If it accepts neither supertypes nor subtypes.
  *
- *
+ * variance is not supported fully in kotlin
+ * but you can assign using site-variance
  * wildcards are also present in kotlin
  * there are two keywords in and out
  *
@@ -51,7 +52,7 @@ class Child:Base(){
         println("Child")
     }
 }
-class Super<in T>(){
+class Super<in Base>(){
 
 }
 
@@ -62,11 +63,11 @@ var childObj:Super<Child> = superObj
 //var superiorObj:Super<Base> = dependentObj
 
 //------
-
-var arraylistany:ArrayList<in String> = ArrayList<Any>()
+//only assignment can be done
+var arraylistin:ArrayList<in String> = ArrayList<Any>()
 var arraylistany:ArrayList<out Any> = ArrayList<String>()
-var arraylistany:ArrayList<*> = ArrayList<String>()
-
+var arrayliststar:ArrayList<*> = ArrayList<String>()
+var arrayListBase:ArrayList<out Base> = ArrayList<Child>()
 
 
 /**
